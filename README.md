@@ -16,39 +16,46 @@ An inventory management web application for tracking Rubik's Cube products, stoc
 
 ## 🧱 Models
 
-### Product
-- `name` (String)
-- `description` (String)
-- `price` (Number)
-- `stock` (Number)
-- `imageUrl` (String)
-- `supplier` (ObjectId)
-- `orders` (Array of ObjectId)
+### 🧊 Product
+- `name` (String) — Name of the cube (e.g., "3x3 Speed Cube")
+- `description` (String) — Product details
+- `price` (Number) — Retail price
+- `stock` (Number) — Units in inventory
+- `imageUrl` (String) — Image path or URL
+- `supplier` (ObjectId) — Linked Supplier
+- `orders` (Array of ObjectId) — Orders containing this product
 
-### Supplier
-- `name` (String)
-- `contact` (String)
-- `email` (String)
-- `products` (Array of ObjectId)
+### 🚚 Supplier
+- `name` (String) — Supplier name
+- `contact` (String) — Contact person
+- `email` (String) — Email address
+- `products` (Array of ObjectId) — Products supplied
 
-### Order
-- `items` (Array of { product, quantity })
-- `total` (Number)
-- `status` (String: `Processing`, `Shipped`, `Delivered`)
-- `date` (Date)
-- `customer` (Optional ObjectId)
+### 🛒 Order
+- `items` (Array of { product, quantity }) — Ordered items
+- `total` (Number) — Total order cost
+- `status` (String: `Processing`, `Shipped`, `Delivered`) — Order status
+- `date` (Date) — Order date
+- `customer` (Optional ObjectId) — Linked user (if registered)
 
+### 👤 User
+- `username` (String) — Unique display name
+- `email` (String) — Unique email address
+- `password` (String) — Hashed password
+- `role` (String: `user`, `admin`) — User role
+- `orders` (Array of ObjectId) — Orders placed by user
 ---
 
 ## 📁 Folder Structure
-```php
+```
 rubiks-inventory/
 ├── app.js                    # Express app config
 ├── server.js                 # Server entry
 ├── models/
 │   ├── product.js            # Rubik's Cube model
 │   ├── supplier.js           # Supplier model
-│   └── order.js              # Order model
+│   ├── order.js              # Order model
+│   └── user.js               # User model with auth logic
 ├── controllers/
 │   ├── products/
 │   │   ├── dataController.js     # Business logic (stock, details)
@@ -60,20 +67,26 @@ rubiks-inventory/
 │   │   ├── viewController.js
 │   │   ├── apiController.js
 │   │   └── routeController.js
-│   └── suppliers/
-│       ├── dataController.js
-│       ├── viewController.js
-│       ├── apiController.js
-│       └── routeController.js
+│   ├── suppliers/
+│   │   ├── dataController.js
+│   │   ├── viewController.js
+│   │   ├── apiController.js
+│   │   └── routeController.js
+│   └── users/
+│       ├── dataController.js     # Register, login, profile logic
+│       ├── viewController.js     # Login/register forms and user pages
+│       ├── apiController.js      # API response handling
+│       └── routeController.js    # User web and API routing
 ├── routes/
-│   └── apiRoutes.js          # Router for all API endpoints
+│   └── apiRoutes.js              # Router for all API endpoints
 ├── views/
-│   └── products/             # Product listing & detail pages
-│   └── orders/               # Orders dashboard
-│   └── suppliers/            # Supplier details
-│   └── layouts/              # Shared UI layouts
-├── public/                   # Static files (images, CSS, etc.)
-└── tests/                    # Unit/integration tests
+│   └── products/                 # Product listing & detail pages
+│   └── orders/                   # Orders dashboard
+│   └── suppliers/                # Supplier details
+│   └── users/                    # Register, login, profile pages
+│   └── layouts/                  # Shared UI layouts
+├── public/                       # Static files (images, CSS, etc.)
+└── tests/                        # Unit/integration tests
 ```
 
 ---
@@ -156,3 +169,13 @@ rubiks-inventory/
 | GET    | `/suppliers/:id/edit`     | Edit supplier             | ✅ Yes          |
 | PUT    | `/suppliers/:id`          | Update supplier           | ✅ Yes          |
 | DELETE | `/suppliers/:id`          | Delete supplier           | ✅ Yes          |
+| GET    | `/users`                  | View all users (admin)    | ✅ Yes          |
+| GET    | `/users/:id`              | View user profile         | ✅ Yes          |
+| GET    | `/users/:id/edit`         | Edit user profile form    | ✅ Yes          |
+| PUT    | `/users/:id`              | Update user               | ✅ Yes          |
+| DELETE | `/users/:id`              | Delete user               | ✅ Yes          |
+| GET    | `/login`                  | Login form                | ❌ No           |
+| POST   | `/login`                  | Login user                | ❌ No           |
+| GET    | `/register`               | Registration form         | ❌ No           |
+| POST   | `/register`               | Create new user           | ❌ No           |
+
