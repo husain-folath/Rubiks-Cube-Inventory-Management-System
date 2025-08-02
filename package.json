@@ -2,7 +2,7 @@
   "name": "rubiks-cube-inventory-management-system",
   "version": "1.0.0",
   "description": "An inventory management web application for tracking Rubik's Cube products, stock levels, suppliers, and customer orders.",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
