@@ -12,7 +12,7 @@ function index (props)
                     products.map(product=>{
                         return(
                             <p>
-                                name: {product.name} <br/>
+                                name: <a href={`/products/${product._id}`}>{product.name} </a><br/>
                                 description: {product.description}<br/>
                                 price: {product.price}<br/>
                                 stock: {product.stock}<br/>
