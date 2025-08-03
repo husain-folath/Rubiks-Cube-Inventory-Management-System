@@ -13,9 +13,9 @@ function NewView(props)
             Product stock: <input type="number" name="stock" defaultValue="1"/><br />
             Supplier: 
             <select name="supplier">
+                <option value="">Select a supplier</option>
                 {
                     suppliers.map(supplier=>{
-                        <option value="">Select a supplier</option>
                         return(
                             <option value={`${supplier._id}`}>{`${supplier.name}`}</option>
                         )

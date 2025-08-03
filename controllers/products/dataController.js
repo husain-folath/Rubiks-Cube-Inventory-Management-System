@@ -1,5 +1,5 @@
 const Product=require("../../models/product")
-
+const Supplier= require("../../models/supplier")
 const dataController={}
 
 // Index
@@ -27,7 +27,6 @@ dataController.destroy= async (req,res,next)=>
 dataController.update= async (req,res,next)=>
 {
     try {
-        console.log("updated")
         res.locals.data.product= await Product.findByIdAndUpdate(req.params.id ,req.body, {new:true})
         next()
     } catch (error) {
@@ -40,6 +39,9 @@ dataController.create=async (req,res,next)=>
 {
     try {
        res.locals.data.product= await Product.create(req.body)
+       const supplier= await Supplier.findById(req.body.supplier)
+       supplier.products.addToSet(res.locals.data.product._id)
+       await supplier.save()
        next()
     } catch (error) {
         res.status(400).send({message:error.message})

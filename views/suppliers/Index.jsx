@@ -1,7 +1,7 @@
 const React=require("react")
 
 
-function index (props)
+function Index (props)
 {
     const suppliers=props.suppliers
     return(
@@ -12,7 +12,7 @@ function index (props)
             <ul>
                 {
                     suppliers.map(supplier=>{
-                        return <li>supplier: {supplier.name}</li>
+                        return <li>supplier: <a href={`suppliers/${supplier._id}`}>{supplier.name}</a> </li>
                     })
                 }
             </ul>
@@ -21,4 +21,4 @@ function index (props)
 }
 
 
-module.exports=index
+module.exports=Index
