@@ -10,7 +10,7 @@ function Show (props)
             <p>
                 email: {email} <br />
                 contact: {contact}<br />
-                products: {products.map(product=>{return<p>{product.name}</p>})}<br />
+                products: {products.map(product=>{return<p><a href={`/products/${product._id}`}>{product.name}</a></p>})}<br />
             </p>
             <form action={`/suppliers/${_id}?_method=DELETE`} method="POST">
                 <input type="submit" value="Delete supplier" />

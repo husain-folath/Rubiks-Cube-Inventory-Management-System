@@ -52,7 +52,7 @@ dataController.create=async (req,res,next)=>
 dataController.show=async (req,res,next)=>
 {
     try {
-        res.locals.data.product= await Product.findById(req.params.id)
+        res.locals.data.product= await Product.findById(req.params.id).populate("supplier")
         next()
     } catch (error) {
         res.status(400).send({message:error.message})
