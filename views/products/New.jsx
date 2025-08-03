@@ -2,6 +2,7 @@ const React=require("react")
 
 function NewView(props)
 {
+    const suppliers=props.suppliers
     return(
         <div>
             <h1>Add new product</h1>
@@ -10,6 +11,17 @@ function NewView(props)
             Product description: <input type="text" name="description" placeholder="Enter description here"/><br />
             Product price: <input type="number" name="price" defaultValue="1"/><br />
             Product stock: <input type="number" name="stock" defaultValue="1"/><br />
+            Supplier: 
+            <select name="supplier">
+                {
+                    suppliers.map(supplier=>{
+                        <option value="">Select a supplier</option>
+                        return(
+                            <option value={`${supplier._id}`}>{`${supplier.name}`}</option>
+                        )
+                    })
+                }
+            </select> <br />
             <input type="submit" value="Add Product" />
             </form>
             <a href="/products">Go back</a>

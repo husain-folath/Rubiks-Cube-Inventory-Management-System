@@ -2,11 +2,11 @@ const express=require("express")
 const router=express.Router()
 const viewController=require("./viewController")
 const dataController=require("./dataController")
-
+const suppliersDataController=require("../suppliers/dataController")
 // Index 
 router.get("/",dataController.index,viewController.index)
 // New
-router.get("/new",viewController.newView)
+router.get("/new",suppliersDataController.index,viewController.newView)
 // Destroy
 router.delete("/:id",dataController.destroy, viewController.redirectHome)
 // Update

@@ -7,7 +7,7 @@ const  viewController={
     },
     newView(req,res)
     {
-        res.render("products/New")
+        res.render("products/New",res.locals.data)
     },
     edit(req,res)
     {

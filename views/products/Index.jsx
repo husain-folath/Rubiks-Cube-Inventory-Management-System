@@ -5,8 +5,9 @@ function index (props)
     const products= props.products
     return(
         <div>
+            <a href="/suppliers">Go To Suppliers</a>
             <h1>Avialable Products:</h1>
-            <a href="/products/new">Add a new product</a>
+            <a href="/products/new">Add a new product</a> <br />
             <ul>
                 {
                     products.map(product=>{

@@ -4,6 +4,7 @@ const app = express()
 const jsxEngine=require("jsx-view-engine")
 const methodOverride=require("method-override")
 const productRouter=require("./controllers/products/routeController")
+const supplierRouter=require("./controllers/suppliers/routeController")
 
 app.set('view engine', 'jsx')
 app.engine('jsx', jsxEngine())
@@ -18,13 +19,14 @@ app.use((req, res, next) => {
 app.use(express.static('public'))
 app.use(morgan('dev'))
 
-
+// redirect the user to the products index
 app.get("/",(req,res)=>
 {
     res.redirect("/products")
 })
 
+// split into different paths
 app.use("/products",productRouter)
-
+app.use("/suppliers",supplierRouter)
 
 module.exports = app
