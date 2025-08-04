@@ -6,6 +6,7 @@ const methodOverride=require("method-override")
 const productRouter=require("./controllers/products/routeController")
 const supplierRouter=require("./controllers/suppliers/routeController")
 const userRouter=require("./controllers/users/routeController")
+const orderRouter=require("./controllers/orders/routeController")
 
 app.set('view engine', 'jsx')
 app.engine('jsx', jsxEngine())
@@ -30,5 +31,6 @@ app.get("/",(req,res)=>
 app.use("/products",productRouter)
 app.use("/suppliers",supplierRouter)
 app.use("/users",userRouter)
+app.use("/orders",orderRouter)
 
 module.exports = app

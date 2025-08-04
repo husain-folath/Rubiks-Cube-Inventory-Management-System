@@ -1,7 +1,7 @@
 const User = require('../../models/user')
 const bcrypt = require('bcrypt')
 const jwt = require('jsonwebtoken')
-const dataController = require('../products/dataController')
+// const dataController = require('../products/dataController')
 
 // instead of creating an object we can use the exports object directly
 // this is how
@@ -31,7 +31,8 @@ exports.auth = async (req, res, next) => {
 
 exports.createUser = async (req, res,next) => {
   try{
-    const user = new User(req.body)
+    const role="Admin"
+    const user = new User(req.body,role)
     await user.save()
     const token = await user.generateAuthToken()
     res.locals.data.token=token
