@@ -14,7 +14,7 @@ function Index (props)
                 {
                     orders.length>0?
                         orders.map(order=>{
-                        return <li>order: <a href={`orders/${order._id}`}>Order ID:{order._id}</a> </li>
+                        return <li>order: <a href={`orders/${order._id}`}>Order ID:{`${order._id}`}</a> </li>
                         })
                    : (<li> No Orders Found</li>)
                 }

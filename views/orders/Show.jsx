@@ -3,18 +3,40 @@ const React =require("react")
 function Show (props)
 {
     const order =props.order
-
+    const products= props.products
     return(
         <div>
             <h1>order ID: {`${order._id}`}</h1>
             <p>
+                made By:
                 cost: {order.cost} <br />
                 status: {order.status}<br />
                  items: {order.items.length>0?order.items.map(item=>{return<p><a href={`/products/${item.product._id}`}>{item.product.name}</a>, Quantity:{item.quantity}</p>}): (<li>No items found</li>)}<br />
             </p>
+            <form action={`/orders/${order._id}?_method=PUT`} method="post">
+       
+            Product: 
+            <select name="productId" required>
+                <option value="">Select a product</option>
+                {
+                    //use this and add quantity to redirect to a show page where you can add more products
+                    products.map(product=>{
+                        return(
+                            <option value={`${product._id}`}>{`${product.name}`}</option>
+                        )
+                    })
+                    
+                }
+
+            </select>
+            Quantity: <input type="number" name="quantity" min={1} defaultValue={1} />
+            <br />
+            <input type="submit" value="Add Product" />
+            </form>
             <form action={`/orders/${order._id}?_method=DELETE`} method="POST">
                 <input type="submit" value="Delete order" />
             </form>
+
             <a href={`/orders/${order._id}/edit`}><button>Edit order</button></a> <br />
             <a href="/orders">Go Back</a>
         </div>
