@@ -10,10 +10,13 @@ router.get("/new",productDataController.index,viewController.newView)
 // Destroy
 router.delete("/:id", dataController.destroy, viewController.redirectHome)
 // Update
-router.put("/:id",dataController.updateAddMore,viewController.redirectShow)
+router.put("/:id",dataController.update,viewController.redirectShow)
+// Update add more
+router.put("/:id/edit",dataController.updateAddMore,viewController.redirectShow)
 // Create
 router.post("/", dataController.create,viewController.redirectShow)
 // Edit 
+router.get("/:id/edit", productDataController.index,dataController.show,viewController.edit)
 // Show
 router.get("/:id", productDataController.index,dataController.show,viewController.show)
 

@@ -13,6 +13,10 @@ viewController.show=function (req,res)
 {
     res.render("orders/Show",res.locals.data)
 }
+viewController.edit=function (req,res)
+{
+    res.render("orders/Edit",res.locals.data)
+}
 // Update
 viewController.redirectShow=function (req,res)
 {

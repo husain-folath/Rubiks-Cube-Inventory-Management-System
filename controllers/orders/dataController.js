@@ -25,8 +25,42 @@ dataController.destroy= async (req,res,next)=>
         res.status(400).send({message:error.message})
     }
 }
-
 // Update
+dataController.update = async (req, res, next) => {
+  try {
+    const order = await Order.findById(req.params.id).populate("items.product");
+    order.cost=0
+    // Update status
+    if (req.body.status) {
+      order.status = req.body.status;
+    }
+
+    // Update quantities and remove items
+    const updatedItems = [];
+
+    for (const item of order.items) {
+      const productId = item.product._id.toString();
+      if (req.body[`delete_${productId}`]) {
+        continue; // Skip item if marked for deletion
+      }
+      const newQty = parseInt(req.body[`quantity_${productId}`]);
+      if (!isNaN(newQty)) {
+        updatedItems.push({ product: item.product._id, quantity: newQty });
+      }
+      order.cost= parseFloat(order.cost)+ parseFloat(item.product.price)*parseFloat(newQty)
+    }
+
+    order.items = updatedItems;
+    await order.save();
+
+    res.locals.data.order = order;
+    next();
+  } catch (error) {
+    res.status(400).send({ message: error.message });
+  }
+};
+
+// Update add more
 dataController.updateAddMore= async (req,res,next) =>
 {
     try {

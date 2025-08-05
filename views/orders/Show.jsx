@@ -6,14 +6,14 @@ function Show (props)
     const products= props.products
     return(
         <div>
-            <h1>order ID: {`${order._id}`}</h1>
+            <h1>Order ID: {`${order._id}`}</h1>
             <p>
-                made By:
+                made By:{order.user.name} <br />
                 cost: {order.cost} <br />
                 status: {order.status}<br />
                  items: {order.items.length>0?order.items.map(item=>{return<p><a href={`/products/${item.product._id}`}>{item.product.name}</a>, Quantity:{item.quantity}</p>}): (<li>No items found</li>)}<br />
             </p>
-            <form action={`/orders/${order._id}?_method=PUT`} method="post">
+            <form action={`/orders/${order._id}/edit?_method=PUT`} method="post">
        
             Product: 
             <select name="productId" required>
