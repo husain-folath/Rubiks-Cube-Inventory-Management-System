@@ -62,6 +62,7 @@
 const React = require("react"); 
 
 function Edit(props) {
+    const token= props.token
     const order = props.order;
     const products = props.products;
 
@@ -71,7 +72,7 @@ function Edit(props) {
             <p>Made by: {order.user.name}</p>
 
             {/* Form to update status and existing items */}
-            <form action={`/orders/${order._id}?_method=PUT`} method="POST">
+            <form action={`/orders/${order._id}?_method=PUT&token=${token}`} method="POST">
                 <label>Status:
                     <select name="status" defaultValue={order.status}>
                         <option value="Pending">Pending</option>
@@ -87,7 +88,7 @@ function Edit(props) {
                 <h3>Existing Items:</h3>
                 {order.items.length > 0 ? order.items.map((item, index) => (
                     <div key={item.product._id}>
-                        <a href={`/products/${item.product._id}`}>{item.product.name}</a> -
+                        <a href={`/products/${item.product._id}?token=${token}`}>{item.product.name}</a> -
                         Quantity: <input type="number" name={`quantity_${item.product._id}`} defaultValue={item.quantity} min={1} />
                         <label>
                             Delete? <input type="checkbox" name={`delete_${item.product._id}`} />
@@ -104,7 +105,7 @@ function Edit(props) {
             <br /><br /><br />
 
             {/* Form to add a new product to the order */}
-            <form action={`/orders/${order._id}/edit?_method=PUT`} method="POST">
+            <form action={`/orders/${order._id}/edit?_method=PUT&token=${token}`} method="POST">
                 <label>
                     Add Product:
                     <select name="productId" required>
@@ -122,12 +123,12 @@ function Edit(props) {
             <br /><br /><br />
 
             {/* Delete Order */}
-            <form action={`/orders/${order._id}?_method=DELETE`} method="POST">
+            <form action={`/orders/${order._id}?_method=DELETE&token=${token}`} method="POST">
                 <input type="submit" value="Delete Order" />
             </form>
 
             <br />
-            <a href={`/orders/${order._id}`}>Go Back</a>
+            <a href={`/orders/${order._id}?token=${token}`}>Go Back</a>
         </div>
     );
 }

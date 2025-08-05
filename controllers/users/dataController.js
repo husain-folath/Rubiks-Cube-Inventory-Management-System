@@ -13,7 +13,8 @@ exports.auth = async (req, res, next) => {
       token = req.query.token  // For web views
     }else if(req.header('Authorization')){
       token = req.header('Authorization').replace('Bearer ', '')  // For API
-    }else {
+    }
+    else {
       throw new Error('No token provided')
     }
     const data = jwt.verify(token, 'John Cena')

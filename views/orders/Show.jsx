@@ -2,6 +2,7 @@ const React =require("react")
 
 function Show (props)
 {
+    const token= props.token
     const order =props.order
     const products= props.products
     return(
@@ -11,9 +12,9 @@ function Show (props)
                 made By:{order.user.name} <br />
                 cost: {order.cost} <br />
                 status: {order.status}<br />
-                 items: {order.items.length>0?order.items.map(item=>{return<p><a href={`/products/${item.product._id}`}>{item.product.name}</a>, Quantity:{item.quantity}</p>}): (<li>No items found</li>)}<br />
+                items: {order.items.length>0?order.items.map(item=>{return<p><a href={`/products/${item.product._id}?token=${token}`}>{item.product.name}</a>, Quantity:{item.quantity}</p>}): (<li>No items found</li>)}<br />
             </p>
-            <form action={`/orders/${order._id}/edit?_method=PUT`} method="post">
+            <form action={`/orders/${order._id}/edit?_method=PUT&token=${token}`} method="post">
        
             Product: 
             <select name="productId" required>
@@ -33,12 +34,12 @@ function Show (props)
             <br />
             <input type="submit" value="Add Product" />
             </form>
-            <form action={`/orders/${order._id}?_method=DELETE`} method="POST">
+            <form action={`/orders/${order._id}?_method=DELETE&token=${token}`} method="POST">
                 <input type="submit" value="Delete order" />
             </form>
 
-            <a href={`/orders/${order._id}/edit`}><button>Edit order</button></a> <br />
-            <a href="/orders">Go Back</a>
+            <a href={`/orders/${order._id}/edit?token=${token}`}><button>Edit order</button></a> <br />
+            <a href={`/orders?token=${token}`}>Go Back</a>
         </div>
     )
 }

@@ -8,18 +8,32 @@ viewController.index=function (req,res)
 // New
 viewController.newView=function (req,res)
 {
-    res.render("suppliers/New")
+    res.render("suppliers/New",res.locals.data)
 }
 
 // Create/destroy
 viewController.redirectHome=function (req,res)
 {
-    res.redirect("/suppliers")
+    if(res.locals.data.token)
+    {
+        res.redirect(`/suppliers?token=${res.locals.data.token}`)
+    }
+    else
+    {
+        res.redirect("/suppliers")
+    }
 }
 // Update
 viewController.redirectShow=function (req,res)
 {
-    res.redirect(`/suppliers/${res.locals.data.supplier._id}`)
+    if(res.locals.data.token)
+    {
+        res.redirect(`/suppliers/${res.locals.data.supplier._id}?token=${res.locals.data.token}`)
+    }
+    else
+    {
+        res.redirect(`/suppliers/${res.locals.data.supplier._id}`)
+    }
 }
 // Edit
 viewController.edit=function (req,res)

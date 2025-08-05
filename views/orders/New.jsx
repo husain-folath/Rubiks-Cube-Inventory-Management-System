@@ -2,11 +2,12 @@ const React=require("react")
 
 function NewView(props)
 {
+    const token= props.token
     const products=props.products
     return(
         <div>
             <h1>Add a new Order</h1>
-            <form action="/orders" method="post">
+            <form action={`/orders?token=${token}`} method="post">
        
             Product: 
             <select name="productId">
@@ -50,7 +51,7 @@ function NewView(props)
             </div>
             ))}      */}
             
-            <a href="/orders">Go back</a>
+            <a href={`/orders?token=${token}`}>Go back</a>
         </div>
     )
 }

@@ -19,7 +19,7 @@ function SignUp (props) {
                     <option value="">Select a role</option>
                     <option value="Admin">Admin</option>
                     <option value="Staff">Staff</option>
-                    <option value="Customer">Customer</option>
+                    {/* <option value="Customer">Customer</option> */}
                 </select> <br />
                 <input type="submit" value="Submit to SignUp" />
             </form>

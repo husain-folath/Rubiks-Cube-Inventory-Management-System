@@ -19,11 +19,24 @@ const  viewController={
     },
     redirectHome(req,res)
     {
-        res.redirect("/products")
+        if(res.locals.data.token)
+        {
+            res.redirect(`/products?token=${res.locals.data.token}`)
+        }else
+        {
+            res.redirect(`/products`)
+        }
     },
     redirectShow(req,res)
     {
-        res.redirect(`/products/${res.locals.data.product._id}`)
+        if(res.locals.data.token)
+        {
+            res.redirect(`/products/${res.locals.data.product._id}?token=${res.locals.data.token}`)        
+        }else
+        {
+            res.redirect(`/products/${res.locals.data.product._id}`)   
+        }
+        
     },
 }
 

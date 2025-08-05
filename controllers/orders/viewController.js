@@ -20,10 +20,23 @@ viewController.edit=function (req,res)
 // Update
 viewController.redirectShow=function (req,res)
 {
-    res.redirect(`/orders/${res.locals.data.order._id}`)
+    if(res.locals.data.token)
+    {
+        res.redirect(`/orders/${res.locals.data.order._id}?token=${res.locals.data.token}`)
+    }
+    else{
+        res.redirect(`/orders/${res.locals.data.order._id}`)
+    }
 }
 viewController.redirectHome=function (req,res)
 {
-    res.redirect(`/orders`)
+    if(res.locals.data.token)
+    {
+        res.redirect(`/orders?token=${res.locals.data.token}`)
+    }
+    else
+    {
+        res.redirect(`/orders`)
+    }
 }
 module.exports=viewController

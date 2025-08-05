@@ -2,6 +2,7 @@ const React =require("react")
 
 function Show (props)
 {
+    const token=props.token
     const {_id,name,description,price,stock, supplier}=props.product
     return(
         <div>
@@ -10,13 +11,13 @@ function Show (props)
                 description: {description} <br />
                 price: {price}<br />
                 stock: {stock}<br />
-                supplier: <a href={`/suppliers/${supplier._id}`}>{supplier.name}</a>
+                supplier: <a href={`/suppliers/${supplier._id}?token=${token}`}>{supplier.name}</a>
             </p>
-            <form action={`/products/${_id}?_method=DELETE`} method="POST">
+            <form action={`/products/${_id}?_method=DELETE&token=${token}`} method="POST">
                 <input type="submit" value="Delete Product" />
             </form>
-            <a href={`/products/${_id}/edit`}><button>Edit Product</button></a> <br />
-            <a href="/products">Go Back</a>
+            <a href={`/products/${_id}/edit?token=${token}`}><button>Edit Product</button></a> <br />
+            <a href={`/products?token=${token}`}>Go Back</a>
         </div>
     )
 }
