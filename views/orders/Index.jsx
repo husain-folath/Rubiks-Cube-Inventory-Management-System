@@ -1,14 +1,13 @@
-import { propfind } from "../../app"
 
 const React=require("react")
-
+const Layout=require("../layouts/Layout")
 
 function Index (props)
 {
     const token= props.token
     const orders=props.orders
     return(
-        <div>
+        <Layout token={token}>
             <h1>Orders index page</h1>
             <a href={`/products?token=${token}`}>Go To Products</a> <br />
             <a href={`/suppliers?token=${token}`}>Go To suppliers</a> <br />
@@ -22,7 +21,7 @@ function Index (props)
                    : (<li> No Orders Found</li>)
                 }
             </ul>
-        </div>
+        </Layout>
     )
 }
 

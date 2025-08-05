@@ -1,4 +1,5 @@
 const React =require("react")
+const Layout=require("../layouts/Layout")
 
 function Show (props)
 {
@@ -6,7 +7,7 @@ function Show (props)
     const order =props.order
     const products= props.products
     return(
-        <div>
+        <Layout token={token}>
             <h1>Order ID: {`${order._id}`}</h1>
             <p>
                 made By:{order.user.name} <br />
@@ -40,7 +41,7 @@ function Show (props)
 
             <a href={`/orders/${order._id}/edit?token=${token}`}><button>Edit order</button></a> <br />
             <a href={`/orders?token=${token}`}>Go Back</a>
-        </div>
+        </Layout>
     )
 }
 

@@ -1,4 +1,5 @@
 const React=require("react")
+const Layout=require("../layouts/Layout")
 
 function Edit(props)
 {
@@ -6,7 +7,7 @@ function Edit(props)
     const {_id,name,description,price,stock}=props.product
 
     return(
-        <div>
+        <Layout token={token}>
             <h1>Update product</h1>
             <form action={`/products/${_id}?_method=PUT&token=${token}`} method="POST">
             Product name: <input type="text" name="name" defaultValue={name}/> <br />
@@ -16,7 +17,7 @@ function Edit(props)
             <input type="submit" value="Update Product" />
             </form>
             <a href={`/products/${_id}?token=${token}`}>Go back</a>
-        </div>
+        </Layout>
     )
 }
 

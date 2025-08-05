@@ -1,11 +1,12 @@
 const React=require("react")
+const Layout=require("../layouts/Layout")
 
 function NewView(props)
 {
     const token = props.token
     const suppliers=props.suppliers
     return(
-        <div>
+        <Layout token={token}>
             <h1>Add new product</h1>
             <form action={`/products?token=${token}`} method="post">
             Product name: <input type="text" name="name" placeholder="Enter name here"/> <br />
@@ -26,7 +27,7 @@ function NewView(props)
             <input type="submit" value="Add Product" />
             </form>
             <a href={`/products?token=${token}`}>Go back</a>
-        </div>
+        </Layout>
     )
 }
 

@@ -1,12 +1,12 @@
 const React=require("react")
-
+const Layout=require("../layouts/Layout")
 
 function Index (props)
 {
     const token= props.token
     const suppliers=props.suppliers
     return(
-        <div>
+        <Layout token={token}>
             <h1>Suppliers index page</h1>
             <a href={`/products?token=${token}`}>Go To Products</a> <br />
             <a href={`/suppliers/new?token=${token}`}>Add supplier</a>
@@ -17,7 +17,7 @@ function Index (props)
                     })
                 }
             </ul>
-        </div>
+        </Layout>
     )
 }
 

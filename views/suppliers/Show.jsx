@@ -1,11 +1,12 @@
 const React =require("react")
+const Layout=require("../layouts/Layout")
 
 function Show (props)
 {
     const token= props.token
     const {_id,name,contact,email,products}=props.supplier
     return(
-        <div>
+        <Layout token={token}>
             <h1>supplier: {name}</h1>
             <p>
                 email: {email} <br />
@@ -17,7 +18,7 @@ function Show (props)
             </form>
             <a href={`/suppliers/${_id}/edit?token=${token}`}><button>Edit supplier</button></a> <br />
             <a href={`/suppliers?token=${token}`}>Go Back</a>
-        </div>
+        </Layout>
     )
 }
 

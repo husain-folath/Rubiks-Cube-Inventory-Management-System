@@ -1,4 +1,5 @@
 const React=require("react")
+const Layout=require("../layouts/Layout")
 
 function Edit(props)
 {
@@ -6,7 +7,7 @@ function Edit(props)
     const {_id,name,contact,email}=props.supplier
 
     return(
-        <div>
+        <Layout token={token}>
             <h1>Edit supplier</h1>
             <form action={`/suppliers/${_id}?_method=PUT&token=${token}`} method="post">
             supplier name: <input type="text" name="name" defaultValue={name}/> <br />
@@ -15,7 +16,7 @@ function Edit(props)
             <input type="submit" value="Change supplier" />
             </form>
             <a href={`/suppliers/${_id}?token=${token}`}>Go back</a>
-        </div>
+        </Layout>
     )
 }
 

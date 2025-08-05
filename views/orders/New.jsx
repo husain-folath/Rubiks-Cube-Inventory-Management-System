@@ -1,11 +1,12 @@
 const React=require("react")
+const Layout=require("../layouts/Layout")
 
 function NewView(props)
 {
     const token= props.token
     const products=props.products
     return(
-        <div>
+        <Layout token={token}>
             <h1>Add a new Order</h1>
             <form action={`/orders?token=${token}`} method="post">
        
@@ -52,7 +53,7 @@ function NewView(props)
             ))}      */}
             
             <a href={`/orders?token=${token}`}>Go back</a>
-        </div>
+        </Layout>
     )
 }
 
