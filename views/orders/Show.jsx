@@ -40,15 +40,15 @@ function Show(props) {
                     <input className="orderBtnAddItemShow" type="submit" value="Add Product" />
                 </form>
 
-                <form id="orderDeleteFormShow" action={`/orders/${order._id}?_method=DELETE&token=${token}`} method="POST">
-                    <input className="orderBtnDeleteShow" type="submit" value="Delete Order" />
-                </form>
 
                 <div id="orderBtnsBarShow">
+                    <a className="orderReturnLinkShow" href={`/orders?token=${token}`}> <button className="orderReturnBtnShow" >Go Back</button></a>
                     <a href={`/orders/${order._id}/edit?token=${token}`}>
                         <button className="orderEditBtnShow">Edit Order</button>
                     </a>
-                    <a className="orderReturnLinkShow" href={`/orders?token=${token}`}>Go Back</a>
+                <form id="orderDeleteFormShow" action={`/orders/${order._id}?_method=DELETE&token=${token}`} method="POST">
+                    <input className="orderBtnDeleteShow" type="submit" value="Delete Order" />
+                </form>
                 </div>
             </div>
         </Layout>

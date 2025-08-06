@@ -56,8 +56,7 @@ function SignIn(props) {
                 }
                 .signin-links {
                     margin-top: 20px;
-                    display: flex;
-                    justify-content: space-between;
+                    text-align: center;
                 }
                 .signin-links a {
                     color: indigo;
@@ -79,8 +78,7 @@ function SignIn(props) {
                         <input type="submit" value="Sign In" />
                     </form>
                     <div className="signin-links">
-                        <a href="/products">Go to Products</a>
-                        <a href="/users/Signup">Sign Up</a>
+                        <a href="/users/Signup">Don’t have an account? Sign Up</a>
                     </div>
                 </div>
             </div>

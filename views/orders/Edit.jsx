@@ -1,5 +1,5 @@
 const React = require("react"); 
-const Layout=require("../layouts/Layout")
+const Layout = require("../layouts/Layout");
 
 function Edit(props) {
     const token = props.token;
@@ -40,7 +40,9 @@ function Edit(props) {
                         <p>No items found</p>
                     )}
 
-                    <input className="orderBtnEdit" type="submit" value="Update Status / Quantities" />
+                    <div className="formBtnCenter">
+                        <input className="orderBtnEdit" type="submit" value="Update Status / Quantities" />
+                    </div>
                 </form>
 
                 {/* Add new product */}
@@ -55,15 +57,20 @@ function Edit(props) {
                         </select>
                     </label>
                     Quantity: <input type="number" name="quantity" min={1} defaultValue={1} />
-                    <input className="orderBtnEdit" type="submit" value="Add Product" />
+                    <div className="formBtnCenter">
+                        <input className="orderBtnEdit" type="submit" value="Add Product" />
+                    </div>
                 </form>
 
-                {/* Delete Order */}
-                <form id="orderDeleteFormEdit" action={`/orders/${order._id}?_method=DELETE&token=${token}`} method="POST">
-                    <input className="orderBtnDeleteEdit" type="submit" value="Delete Order" />
-                </form>
-
-                <a className="orderReturnLinkEdit" href={`/orders/${order._id}?token=${token}`}>Go Back</a>
+                {/* Delete & Go Back Buttons */}
+                <div className="orderBottomBtnsEdit">
+                    <form id="orderDeleteFormEdit" action={`/orders/${order._id}?_method=DELETE&token=${token}`} method="POST">
+                        <input className="orderBtnDeleteEdit" type="submit" value="Delete Order" />
+                    </form>
+                    <a className="orderReturnLinkEdit" href={`/orders/${order._id}?token=${token}`}>
+                        <button type="button" className="orderReturnBtnEdit">Go Back</button>
+                    </a>
+                </div>
             </div>
         </Layout>
     );

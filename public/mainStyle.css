@@ -180,8 +180,8 @@ nav>a:hover {
     align-items: center;
     border-radius: 10%;
     font-size: larger;
-    background-color: indigo;
-    color: aliceblue;
+    background-color: rgb(221, 221, 255);
+    color: indigo;
 }
 #productFormContainerNew> form{
     display: flex;
@@ -248,7 +248,7 @@ nav>a:hover {
 }
 /* ---------------- Orders ---------------- */
 
-/* Index */
+/* Orders - Index */
 #ordersContainerIndex {
     display: flex;
     flex-direction: column;
@@ -260,16 +260,22 @@ nav>a:hover {
 #ordersTitleIndex {
     text-align: center;
     margin-bottom: 20px;
+    color: indigo;
+    background-color: rgb(221, 221, 255);
+    border-radius: 10%;
+    border: 2px solid indigo;
+    padding: 5px;
+    
 }
-
 .orderAddLinkIndex {
     background-color: indigo;
     color: aliceblue;
     padding: 10px 20px;
     border: 2px solid rgb(57, 1, 98);
-    border-radius: 10%;
+    border-radius: 8px;
     text-decoration: none;
     font-weight: bold;
+    margin-bottom: 20px;
 }
 
 .orderAddLinkIndex:hover {
@@ -277,25 +283,53 @@ nav>a:hover {
     cursor: pointer;
 }
 
-.ordersListIndex {
-    list-style: none;
-    padding: 0;
+.ordersTableIndex {
+    width: 90%;
+    border-collapse: collapse;
     margin-top: 20px;
+    font-family: Arial, sans-serif;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    background-color: aliceblue; /* uniform background */
 }
 
-.orderItemIndex {
-    margin: 10px 0;
+.ordersTableIndex th,
+.ordersTableIndex td {
+    border: 1px solid #ccc;
+    padding: 12px 16px;
+    text-align: center;
+}
+
+.ordersTableIndex th {
+    background-color: indigo;
+    color: white;
+    font-weight: bold;
+}
+
+.ordersTableIndex tr {
+    background-color: rgb(221, 221, 255); /* all rows the same */
+}
+
+.ordersTableIndex tr:hover {
+    background-color: #e6e6fa; /* subtle hover effect */
+    cursor: pointer;
 }
 
 .orderLinkIndex {
+    color: indigo;
     text-decoration: none;
-    color: black;
     font-weight: bold;
 }
 
 .orderLinkIndex:hover {
-    color: indigo;
+    text-decoration: underline;
 }
+
+.noOrdersMessage {
+    margin-top: 20px;
+    font-size: large;
+    color: rgb(80, 80, 80);
+}
+
 
 /* Show */
 #orderContainerShow {
@@ -305,7 +339,7 @@ nav>a:hover {
     padding: 20px;
     border: 2px solid rgb(57, 1, 98);
     border-radius: 10%;
-    background-color: aliceblue;
+    background-color: rgb(221, 221, 255);
 }
 
 #orderTitleShow {
@@ -343,7 +377,9 @@ nav>a:hover {
 
 .orderBtnAddItemShow,
 .orderBtnDeleteShow,
-.orderEditBtnShow {
+.orderEditBtnShow,
+.orderReturnBtnShow
+ {
     margin: 10px 0;
     background-color: indigo;
     color: aliceblue;
@@ -397,8 +433,8 @@ nav>a:hover {
     align-items: center;
     border-radius: 10%;
     font-size: larger;
-    background-color: indigo;
-    color: aliceblue;
+    background-color: rgb(221, 221, 255);
+    color: indigo;
     padding: 20px;
 }
 
@@ -416,7 +452,7 @@ nav>a:hover {
     color: aliceblue;
 }
 
-.orderBtnAddNew {
+.orderBtnAddNew ,.orderReturnBtnNew{
     background-color: rgb(138, 4, 233);
     color: aliceblue;
     padding: 10px 15px;
@@ -426,7 +462,7 @@ nav>a:hover {
     font-weight: bold;
 }
 
-.orderBtnAddNew:hover {
+.orderBtnAddNew:hover, .orderReturnBtnNew:hover{
     filter: brightness(85%);
     cursor: pointer;
 }
@@ -442,69 +478,130 @@ nav>a:hover {
 #orderContainerEdit {
     display: flex;
     flex-direction: column;
-    margin: 20px;
-    padding: 20px;
+    margin: 20px auto;
+    padding: 15px;
+    max-width: 700px;
     border: 2px solid rgb(57, 1, 98);
-    border-radius: 10%;
-    background-color: aliceblue;
+    border-radius: 12px;
+    background-color: rgb(221, 221, 255);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
 
 #orderTitleEdit {
     text-align: center;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
+    color: indigo;
+    font-size: 1.5rem;
 }
 
 .orderUserEdit {
-    font-size: large;
-    margin-bottom: 15px;
+    font-size: medium;
+    margin-bottom: 10px;
+    text-align: center;
 }
 
 #orderFormEdit,
-#orderAddFormEdit,
-#orderDeleteFormEdit {
-    margin-top: 20px;
+#orderAddFormEdit {
     display: flex;
     flex-direction: column;
     gap: 10px;
+    margin-top: 15px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background: aliceblue;
+}
+
+#orderFormEdit select,
+#orderAddFormEdit select,
+#orderFormEdit input[type="number"],
+#orderAddFormEdit input[type="number"] {
+    background-color: rgb(138, 4, 233);
+    color: aliceblue;
+    font-size: 14px;
+    padding: 6px;
+    border: 1px solid rgb(57, 1, 98);
+    border-radius: 5px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+#orderFormEdit h3,
+#orderItemsTitleEdit {
+    text-align: center;
+    color: indigo;
+    margin-bottom: 8px;
+    font-size: 1.1rem;
 }
 
 .orderItemEdit {
-    margin: 10px 0;
+    margin: 6px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 14px;
+    padding: 4px 0;
+    border-bottom: 1px solid #ddd;
 }
 
 .orderProductLinkEdit {
     text-decoration: none;
-    color: black;
+    color: indigo;
     font-weight: bold;
 }
 
 .orderProductLinkEdit:hover {
-    color: indigo;
+    text-decoration: underline;
+}
+
+.formBtnCenter {
+    display: flex;
+    justify-content: center;
+    margin-top: 8px;
+}
+
+.orderBottomBtnsEdit {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 15px;
 }
 
 .orderBtnEdit,
-.orderBtnDeleteEdit {
+.orderBtnDeleteEdit,
+.orderReturnBtnEdit {
     background-color: indigo;
     color: aliceblue;
-    padding: 10px 15px;
+    padding: 8px 15px;
     border: 2px solid rgb(57, 1, 98);
-    border-radius: 15%;
-    font-size: medium;
+    border-radius: 6px;
+    font-size: 14px;
     font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s;
 }
 
 .orderBtnEdit:hover,
-.orderBtnDeleteEdit:hover {
+.orderBtnDeleteEdit:hover,
+.orderReturnBtnEdit:hover {
     filter: brightness(85%);
-    cursor: pointer;
+}
+
+/* Delete button distinct */
+.orderBtnDeleteEdit {
+    background-color: crimson;
+    border: 2px solid darkred;
+}
+
+.orderBtnDeleteEdit:hover {
+    background-color: darkred;
+    filter: brightness(95%);
 }
 
 .orderReturnLinkEdit {
-    margin-top: 20px;
-    color: indigo;
     text-decoration: none;
-    font-weight: bold;
 }
+
 
 /* ---------------- Suppliers ---------------- */
 
@@ -667,8 +764,8 @@ nav>a:hover {
     align-items: center;
     border-radius: 10%;
     font-size: larger;
-    background-color: indigo;
-    color: aliceblue;
+    background-color: rgb(221, 221, 255);
+    color: indigo;
     padding: 20px;
 }
 
