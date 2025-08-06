@@ -24,15 +24,16 @@ function Show(props) {
                     </p>
                 </div>
 
-                <form id="supplierDeleteFormShow" action={`/suppliers/${_id}?_method=DELETE&token=${token}`} method="POST">
-                    <input className="supplierBtnDeleteShow" type="submit" value="Delete Supplier" />
-                </form>
+
 
                 <div id="supplierBtnsBarShow">
+                    <a className="supplierReturnLinkShow" href={`/suppliers?token=${token}`}><button className="supplierReturnBtnShow">Go Back</button></a>
                     <a href={`/suppliers/${_id}/edit?token=${token}`}>
                         <button className="supplierEditBtnShow">Edit Supplier</button>
                     </a>
-                    <a className="supplierReturnLinkShow" href={`/suppliers?token=${token}`}>Go Back</a>
+                    <form id="supplierDeleteFormShow" action={`/suppliers/${_id}?_method=DELETE&token=${token}`} method="POST">
+                        <input className="supplierBtnDeleteShow" type="submit" value="Delete Supplier" />
+                    </form>
                 </div>
             </div>
         </Layout>

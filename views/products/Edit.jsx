@@ -22,7 +22,7 @@ function Edit(props) {
                                 
                             </div> <br />
                         </div>
-                        <input type="submit" value="Add Product" id="productAddBtnNew" />
+                        <input type="submit" value="Update Product" id="productAddBtnNew" />
                     </form>
                 </div>
                 <a href={`/products/${_id}?token=${token}`}><button id="productReturnBtnNew">Return</button></a>

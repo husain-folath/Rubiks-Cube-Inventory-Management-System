@@ -11,20 +11,20 @@ function Edit(props) {
                 <h1 id="supplierTitleEdit">Edit Supplier</h1>
                 <form id="supplierFormEdit" action={`/suppliers/${_id}?_method=PUT&token=${token}`} method="post">
                     <label>
-                        Supplier Name:
+                        Supplier Name: <br />
                         <input type="text" name="name" defaultValue={name} />
                     </label>
                     <label>
-                        Supplier Number:
+                        Supplier Number: <br />
                         <input type="tel" name="contact" defaultValue={contact} />
                     </label>
                     <label>
-                        Supplier Email:
+                        Supplier Email: <br />
                         <input type="email" name="email" defaultValue={email} />
                     </label>
                     <input className="supplierBtnEdit" type="submit" value="Change Supplier" />
                 </form>
-                <a className="supplierReturnLinkEdit" href={`/suppliers/${_id}?token=${token}`}>Go Back</a>
+                <a className="supplierReturnLinkEdit" href={`/suppliers/${_id}?token=${token}`}> <button className="supplierReturnBtnEdit">Go Back</button></a>
             </div>
         </Layout>
     );

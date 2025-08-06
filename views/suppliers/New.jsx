@@ -23,7 +23,7 @@ function NewView(props) {
                     </label>
                     <input className="supplierBtnAddNew" type="submit" value="Add Supplier" />
                 </form>
-                <a className="supplierReturnLinkNew" href={`/suppliers?token=${token}`}>Go Back</a>
+                <a className="supplierReturnLinkNew" href={`/suppliers?token=${token}`}><button className="supplierReturnBtnNew">Go Back</button></a>
             </div>
         </Layout>
     );
