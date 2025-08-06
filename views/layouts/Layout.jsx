@@ -7,8 +7,8 @@ function Layout (props)
     return(
   <html>
     <head>
-        <title>WaterMelon</title>
-        <link rel="stylesheet" href="mainStyle.css" />
+        <title>Rubik's Cubes Shop</title>
+        <link rel="stylesheet" href="/mainStyle.css" />
     </head>
     <body>
         <nav>

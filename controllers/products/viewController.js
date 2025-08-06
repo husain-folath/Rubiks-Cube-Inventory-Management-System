@@ -1,4 +1,3 @@
-const { show } = require("./dataController")
 
 const  viewController={
     index(req,res)

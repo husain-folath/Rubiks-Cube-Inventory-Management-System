@@ -1,5 +1,6 @@
 const Supplier=require("../../models/supplier")
 const Product=require("../../models/product")
+const Order= require("../../models/order")
 const dataController={}
 
 // Index
@@ -17,15 +18,38 @@ dataController.index=async (req,res,next) => {
 dataController.destroy= async (req,res,next)=>
 {
     try {
-        console.log("delete me")
-        const supplier =await Supplier.findById(req.params.id)
+        const orders = await Order.find({});
+        const supplier = await Supplier.findById(req.params.id);
+
+        if (!supplier) {
+        return res.status(404).send("Supplier not found");
+        }
 
         if (supplier.products.length > 0) {
-            console.log("deleted product")
-            await Product.deleteMany({ _id: { $in: supplier.products } })
+            for (const order of orders) {
+            const originalLength = order.items.length;
+    
+            // Filter out all items whose product is in supplier.products
+                order.items = order.items.filter(item =>
+                    !supplier.products.some(productId =>
+                    productId.equals(item.product)
+                    )
+                );
+
+            if (order.items.length !== originalLength) {
+            await order.save();
+            }
         }
-        await Supplier.findByIdAndDelete(req.params.id)
-        next()
+
+        // Delete all products associated with the supplier
+            await Product.deleteMany({ _id: { $in: supplier.products } });
+        }
+
+        // Delete the supplier itself
+        await Supplier.findByIdAndDelete(req.params.id);
+
+        next();
+
     } catch (error) {
         res.status(400).send({message:error.message})
     }

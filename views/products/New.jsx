@@ -11,6 +11,7 @@ function NewView(props)
             <form action={`/products?token=${token}`} method="post">
             Product name: <input type="text" name="name" placeholder="Enter name here"/> <br />
             Product description: <input type="text" name="description" placeholder="Enter description here"/><br />
+            Product Image URL: <input type="text" name="image" placeholder="Paste URL here"/><br />
             Product price: <input type="number" name="price" defaultValue="1"/><br />
             Product stock: <input type="number" name="stock" defaultValue="1"/><br />
             Supplier: 

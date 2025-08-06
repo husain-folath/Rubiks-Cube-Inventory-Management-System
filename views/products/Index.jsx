@@ -7,23 +7,23 @@ function index (props)
     const token=props.token
     return(
         <Layout token={token}>
-            <p><a href={`/suppliers?token=${token}`}>Go To Suppliers</a> <a href={`/orders?token=${token}`}>Go To Orders</a> {props.token?<a href="/users/signin">Sign Out</a>:<a href="/users/signin">Sign In</a>}</p>
             <h1>Avialable Products:</h1>
             <a href={`/products/new?token=${token}`}>Add a new product</a> <br />
-            <ul>
+            <div className="productsContainer">
                 {
                     products.map(product=>{
                         return(
-                            <p>
+                            <div class="product">
+                                <img src={product.image} alt={product.description} />
                                 name: <a href={`/products/${product._id}?token=${token}`}>{product.name} </a><br/>
                                 description: {product.description}<br/>
                                 price: {product.price}<br/>
                                 stock: {product.stock}<br/>
-                            </p>
+                            </div>
                         )
                     })
                 }
-            </ul>
+            </div>
         </Layout>
     )
 }

@@ -8,7 +8,6 @@ function Index (props)
     return(
         <Layout token={token}>
             <h1>Suppliers index page</h1>
-            <a href={`/products?token=${token}`}>Go To Products</a> <br />
             <a href={`/suppliers/new?token=${token}`}>Add supplier</a>
             <ul>
                 {
