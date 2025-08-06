@@ -11,21 +11,23 @@ function Show(props) {
                 <div>
 
                     <p id="productDetailsShow">
-                        <strong>description: </strong> {description} <br />
-                        <strong> price:</strong>  {price}<br />
-                        <strong> stock:</strong>  {stock}<br />
-                        <strong> supplier:</strong>  <a href={`/suppliers/${supplier._id}?token=${token}`}>{supplier.name}</a> <br />
+                        <strong>description: </strong> {description} <br /><br />
+                        <strong> price:</strong>  {price}<br /><br />
+                        <strong> stock:</strong>  {stock}<br /><br />
+                        <strong> supplier:</strong>  <a id="productSupplierLinkShow" href={`/suppliers/${supplier._id}?token=${token}`}>{supplier.name}</a> <br />
                     </p>
+            <div id="productBtnsBarShow">
+                <a href={`/products?token=${token}`}><button id="productReturnBtnShow">Return</button></a>
+                <a href={`/products/${_id}/edit?token=${token}`}><button id="productEditBtnShow"> Edit</button></a> <br />
+                <form action={`/products/${_id}?_method=DELETE&token=${token}`} method="POST">
+                    <input type="submit" value=" Delete" id="productDeleteBtnShow" />
+                </form>
+            </div>
                 </div>
                 <div>
                     <img src={image} alt={description} id="productImgShow" />
                 </div>
             </div>
-            <form action={`/products/${_id}?_method=DELETE&token=${token}`} method="POST">
-                <input type="submit" value="Delete Product" />
-            </form>
-            <a href={`/products/${_id}/edit?token=${token}`}><button>Edit Product</button></a> <br />
-            <a href={`/products?token=${token}`}>Go Back</a>
         </Layout>
     )
 }
