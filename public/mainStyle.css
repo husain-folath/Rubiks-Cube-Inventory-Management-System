@@ -104,7 +104,7 @@ nav>a:hover {
     display: flex;
     margin: 5px;
     justify-content: space-evenly;
-    background-color:rgb(221, 221, 255) ;
+    background-color: rgb(221, 221, 255);
     border: #4b0082 solid 2px;
     border-radius: 5%;
     padding: 20px 5px;
@@ -169,9 +169,9 @@ nav>a:hover {
 }
 
 #productFormContainerNew {
-   
+
     height: 450px;
-    min-width:550px;
+    min-width: 550px;
     width: 70vw;
     border: 2px solid rgb(57, 1, 98);
     display: flex;
@@ -183,47 +183,55 @@ nav>a:hover {
     background-color: rgb(221, 221, 255);
     color: indigo;
 }
-#productFormContainerNew> form{
+
+#productFormContainerNew>form {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     font-size: larger;
 }
-#productFormContainerNew> form>div>div>input,#productFormContainerNew> form>div>div>select {
+
+#productFormContainerNew>form>div>div>input,
+#productFormContainerNew>form>div>div>select {
     background-color: rgb(138, 4, 233);
     color: aliceblue;
     font-size: large;
 }
-#productFormContainerNew> form>div>div>input::placeholder
-{
-    color:aliceblue ;
+
+#productFormContainerNew>form>div>div>input::placeholder {
+    color: aliceblue;
 }
-#productFormContainerNew> form{
+
+#productFormContainerNew>form {
     width: 90%;
     height: 90%;
 }
-#productFormSubContainerNew{
+
+#productFormSubContainerNew {
     display: flex;
     justify-content: space-between;
-    align-items:center;
+    align-items: center;
     width: 100%;
     height: 100%;
-    
+
 }
-#productFormSubContainerNew>div{
-    width:100%;
-    
+
+#productFormSubContainerNew>div {
+    width: 100%;
+
 }
-#productFormSubContainerNew>div{
+
+#productFormSubContainerNew>div {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    align-items:center;
+    align-items: center;
     height: 225px;
     width: 250px;
     gap: 5px;
-    
+
 }
+
 #productReturnBtnNew {
     margin: 10px 0 0 10px;
     background-color: indigo;
@@ -234,18 +242,21 @@ nav>a:hover {
     /* font-size: xx-large; */
     border: 2px solid rgb(57, 1, 98);
 }
+
 #productReturnBtnNew:hover {
     filter: brightness(85%);
     cursor: pointer;
 }
-#productAddBtnNew{
+
+#productAddBtnNew {
     height: 40px;
     border-radius: 15%;
     background-color: rgb(138, 4, 233);
     color: aliceblue;
-    border: solid 2px rgb(57, 1, 98) ;
+    border: solid 2px rgb(57, 1, 98);
     font-size: large;
 }
+
 /* ---------------- Orders ---------------- */
 
 /* Orders - Index */
@@ -265,8 +276,9 @@ nav>a:hover {
     border-radius: 10%;
     border: 2px solid indigo;
     padding: 5px;
-    
+
 }
+
 .orderAddLinkIndex {
     background-color: indigo;
     color: aliceblue;
@@ -288,8 +300,9 @@ nav>a:hover {
     border-collapse: collapse;
     margin-top: 20px;
     font-family: Arial, sans-serif;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-    background-color: aliceblue; /* uniform background */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    background-color: aliceblue;
+    /* uniform background */
 }
 
 .ordersTableIndex th,
@@ -306,11 +319,13 @@ nav>a:hover {
 }
 
 .ordersTableIndex tr {
-    background-color: rgb(221, 221, 255); /* all rows the same */
+    background-color: rgb(221, 221, 255);
+    /* all rows the same */
 }
 
 .ordersTableIndex tr:hover {
-    background-color: #e6e6fa; /* subtle hover effect */
+    background-color: #e6e6fa;
+    /* subtle hover effect */
     cursor: pointer;
 }
 
@@ -378,8 +393,7 @@ nav>a:hover {
 .orderBtnAddItemShow,
 .orderBtnDeleteShow,
 .orderEditBtnShow,
-.orderReturnBtnShow
- {
+.orderReturnBtnShow {
     margin: 10px 0;
     background-color: indigo;
     color: aliceblue;
@@ -452,7 +466,8 @@ nav>a:hover {
     color: aliceblue;
 }
 
-.orderBtnAddNew ,.orderReturnBtnNew{
+.orderBtnAddNew,
+.orderReturnBtnNew {
     background-color: rgb(138, 4, 233);
     color: aliceblue;
     padding: 10px 15px;
@@ -462,7 +477,8 @@ nav>a:hover {
     font-weight: bold;
 }
 
-.orderBtnAddNew:hover, .orderReturnBtnNew:hover{
+.orderBtnAddNew:hover,
+.orderReturnBtnNew:hover {
     filter: brightness(85%);
     cursor: pointer;
 }
@@ -484,7 +500,7 @@ nav>a:hover {
     border: 2px solid rgb(57, 1, 98);
     border-radius: 12px;
     background-color: rgb(221, 221, 255);
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 #orderTitleEdit {
@@ -644,16 +660,17 @@ nav>a:hover {
 }
 
 .supplierItemIndex {
-    min-height:250px;
+    min-height: 250px;
     width: 300px;
-    background-color:rgb(221, 221, 255) ;
+    background-color: rgb(221, 221, 255);
     border: #4b0082 solid 2px;
     border-radius: 5%;
     margin: 10px 0;
     padding: 10px;
     font-size: x-large;
 }
-.supplierItemIndex >*>* {
+
+.supplierItemIndex>*>* {
     font-size: x-large;
 }
 
@@ -785,7 +802,8 @@ nav>a:hover {
     color: aliceblue;
 }
 
-.supplierBtnAddNew, .supplierReturnBtnNew {
+.supplierBtnAddNew,
+.supplierReturnBtnNew {
     background-color: rgb(138, 4, 233);
     color: aliceblue;
     padding: 10px 15px;
@@ -795,7 +813,8 @@ nav>a:hover {
     font-weight: bold;
 }
 
-.supplierBtnAddNew:hover, .supplierReturnBtnNew {
+.supplierBtnAddNew:hover,
+.supplierReturnBtnNew {
     filter: brightness(85%);
     cursor: pointer;
 }
@@ -863,7 +882,8 @@ nav>a:hover {
     text-decoration: none;
     font-weight: bold;
 }
-.supplierReturnBtnEdit{
+
+.supplierReturnBtnEdit {
     background-color: indigo;
     color: aliceblue;
     padding: 10px 15px;

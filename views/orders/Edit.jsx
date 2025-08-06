@@ -1,4 +1,4 @@
-const React = require("react"); 
+const React = require("react");
 const Layout = require("../layouts/Layout");
 
 function Edit(props) {

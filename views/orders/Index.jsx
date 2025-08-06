@@ -10,7 +10,7 @@ function Index(props) {
             <div id="ordersContainerIndex">
                 <h1 id="ordersTitleIndex">Orders Index</h1>
                 <a className="orderAddLinkIndex" href={`/orders/new?token=${token}`}>Add New Order</a>
-                
+
                 {orders.length > 0 ? (
                     <table className="ordersTableIndex">
                         <thead>

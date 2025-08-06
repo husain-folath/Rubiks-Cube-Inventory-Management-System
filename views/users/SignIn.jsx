@@ -3,8 +3,8 @@ const React = require("react");
 function SignIn(props) {
     return (
         <html>
-        <head>
-            <style>{`
+            <head>
+                <style>{`
                 body {
                     margin: 0;
                     font-family: Arial, sans-serif;
@@ -67,22 +67,22 @@ function SignIn(props) {
                     text-decoration: underline;
                 }
             `}</style>
-        </head>
-        <body>
-            <div className="signin-container">
-                <div className="signin-card">
-                    <h1>Sign in for the GOAT</h1>
-                    <form className="signin-form" action="/users/signin" method="POST">
-                        <input type="email" name="email" placeholder="Enter your email" required />
-                        <input type="password" name="password" placeholder="Enter your password" required />
-                        <input type="submit" value="Sign In" />
-                    </form>
-                    <div className="signin-links">
-                        <a href="/users/Signup">Don’t have an account? Sign Up</a>
+            </head>
+            <body>
+                <div className="signin-container">
+                    <div className="signin-card">
+                        <h1>Sign in for the GOAT</h1>
+                        <form className="signin-form" action="/users/signin" method="POST">
+                            <input type="email" name="email" placeholder="Enter your email" required />
+                            <input type="password" name="password" placeholder="Enter your password" required />
+                            <input type="submit" value="Sign In" />
+                        </form>
+                        <div className="signin-links">
+                            <a href="/users/Signup">Don’t have an account? Sign Up</a>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </body>
+            </body>
         </html>
     );
 }

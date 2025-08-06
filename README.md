@@ -60,33 +60,26 @@ rubiks-inventory/
 │   ├── products/
 │   │   ├── dataController.js     # Business logic (stock, details)
 │   │   ├── viewController.js     # Views (catalog, single view)
-│   │   ├── apiController.js      # API format
 │   │   └── routeController.js    # Routing
 │   ├── orders/
 │   │   ├── dataController.js     # Order placing, status updates
 │   │   ├── viewController.js
-│   │   ├── apiController.js
 │   │   └── routeController.js
 │   ├── suppliers/
 │   │   ├── dataController.js
 │   │   ├── viewController.js
-│   │   ├── apiController.js
 │   │   └── routeController.js
 │   └── users/
 │       ├── dataController.js     # Register, login, profile logic
 │       ├── viewController.js     # Login/register forms and user pages
-│       ├── apiController.js      # API response handling
 │       └── routeController.js    # User web and API routing
-├── routes/
-│   └── apiRoutes.js              # Router for all API endpoints
 ├── views/
 │   └── products/                 # Product listing & detail pages
 │   └── orders/                   # Orders dashboard
 │   └── suppliers/                # Supplier details
 │   └── users/                    # Register, login, profile pages
 │   └── layouts/                  # Shared UI layouts
-├── public/                       # Static files (images, CSS, etc.)
-└── tests/                        # Unit/integration tests
+└── public/                       # Static files (images, CSS, etc.)
 ```
 
 ---
@@ -98,54 +91,6 @@ rubiks-inventory/
 - JSX / EJS / React (for views)
 - Jest (for testing)
 - JWT (optional for user auth)
-
----
-
-## 🔐 Authentication Endpoints
-
-| Method | Endpoint              | Description        | Auth Required |
-|--------|-----------------------|--------------------|----------------|
-| POST   | `/api/users`          | Create new user    | ❌ No           |
-| POST   | `/api/users/login`    | Login user         | ❌ No           |
-| GET    | `/api/users/profile`  | Get user profile   | ✅ Yes          |
-| PUT    | `/api/users/:id`      | Update user        | ✅ Yes          |
-| DELETE | `/api/users/:id`      | Delete user        | ✅ Yes          |
-
----
-
-## 🧊 Product (Cube) API Endpoints
-
-| Method | Endpoint                 | Description               | Auth Required |
-|--------|--------------------------|---------------------------|----------------|
-| GET    | `/api/products`          | Get all cubes             | ✅ Yes          |
-| GET    | `/api/products/:id`      | Get single cube           | ✅ Yes          |
-| POST   | `/api/products`          | Add new cube product      | ✅ Yes          |
-| PUT    | `/api/products/:id`      | Update cube product       | ✅ Yes          |
-| DELETE | `/api/products/:id`      | Delete cube product       | ✅ Yes          |
-
----
-
-## 🧾 Order API Endpoints
-
-| Method | Endpoint              | Description              | Auth Required |
-|--------|-----------------------|--------------------------|----------------|
-| GET    | `/api/orders`         | Get all orders           | ✅ Yes          |
-| GET    | `/api/orders/:id`     | Get order details        | ✅ Yes          |
-| POST   | `/api/orders`         | Create new order         | ✅ Yes          |
-| PUT    | `/api/orders/:id`     | Update order status      | ✅ Yes          |
-| DELETE | `/api/orders/:id`     | Cancel/delete order      | ✅ Yes          |
-
----
-
-## 🚚 Supplier API Endpoints
-
-| Method | Endpoint                | Description             | Auth Required |
-|--------|-------------------------|-------------------------|----------------|
-| GET    | `/api/suppliers`        | Get all suppliers       | ✅ Yes          |
-| GET    | `/api/suppliers/:id`    | Get supplier details    | ✅ Yes          |
-| POST   | `/api/suppliers`        | Add new supplier        | ✅ Yes          |
-| PUT    | `/api/suppliers/:id`    | Update supplier info    | ✅ Yes          |
-| DELETE | `/api/suppliers/:id`    | Delete supplier         | ✅ Yes          |
 
 ---
 
@@ -169,13 +114,8 @@ rubiks-inventory/
 | GET    | `/suppliers/:id/edit`     | Edit supplier             | ✅ Yes          |
 | PUT    | `/suppliers/:id`          | Update supplier           | ✅ Yes          |
 | DELETE | `/suppliers/:id`          | Delete supplier           | ✅ Yes          |
-| GET    | `/users`                  | View all users (admin)    | ✅ Yes          |
-| GET    | `/users/:id`              | View user profile         | ✅ Yes          |
-| GET    | `/users/:id/edit`         | Edit user profile form    | ✅ Yes          |
-| PUT    | `/users/:id`              | Update user               | ✅ Yes          |
-| DELETE | `/users/:id`              | Delete user               | ✅ Yes          |
-| GET    | `/login`                  | Login form                | ❌ No           |
-| POST   | `/login`                  | Login user                | ❌ No           |
-| GET    | `/register`               | Registration form         | ❌ No           |
-| POST   | `/register`               | Create new user           | ❌ No           |
+| GET    | `/users/signin`           | Login form                | ❌ No           |
+| POST   | `/users/signin`           | Login user                | ❌ No           |
+| GET    | `/users/signup`           | Registration form         | ❌ No           |
+| POST   | `/users/signup`           | Create new user           | ❌ No           |
 

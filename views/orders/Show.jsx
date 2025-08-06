@@ -46,9 +46,9 @@ function Show(props) {
                     <a href={`/orders/${order._id}/edit?token=${token}`}>
                         <button className="orderEditBtnShow">Edit Order</button>
                     </a>
-                <form id="orderDeleteFormShow" action={`/orders/${order._id}?_method=DELETE&token=${token}`} method="POST">
-                    <input className="orderBtnDeleteShow" type="submit" value="Delete Order" />
-                </form>
+                    <form id="orderDeleteFormShow" action={`/orders/${order._id}?_method=DELETE&token=${token}`} method="POST">
+                        <input className="orderBtnDeleteShow" type="submit" value="Delete Order" />
+                    </form>
                 </div>
             </div>
         </Layout>

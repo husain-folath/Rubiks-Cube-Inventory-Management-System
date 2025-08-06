@@ -77,18 +77,10 @@ dataController.updateAddMore = async (req, res, next) => {
                 quantity: quantity
             })
         }
-        console.log(item.quantity)
-        // console.log(order.cost)
-        // console.log(product.price)
-        console.log(quantity)
+
         order.cost = parseInt(order.cost) + parseInt(product.price) * parseInt(quantity)
         res.locals.data.order = await order.save()
 
-        // res.locals.data.order= await Order.findByIdAndUpdate(req.params.id,
-        //     {
-        //     $addToSet:{items:item}
-        //     },
-        //     {new:true})
         next()
     } catch (error) {
         res.status(400).send({ message: error.message })
@@ -98,6 +90,7 @@ dataController.updateAddMore = async (req, res, next) => {
 dataController.create = async (req, res, next) => {
     const product = await Product.findById(req.body.productId)
     const cost = product.price * req.body.quantity
+    const user = req.user
     try {
         res.locals.data.order = await Order.create({
             items: [{
@@ -106,7 +99,7 @@ dataController.create = async (req, res, next) => {
             }],
             cost,
             status: "pending",
-            user: "6890935409174081267192b1"
+            user: user._id.toString()
 
         })
         next()

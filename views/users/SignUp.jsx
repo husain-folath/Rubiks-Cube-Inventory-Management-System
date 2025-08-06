@@ -3,8 +3,8 @@ const React = require("react");
 function SignUp(props) {
     return (
         <html>
-        <head>
-            <style>{`
+            <head>
+                <style>{`
                 body {
                     margin: 0;
                     font-family: Arial, sans-serif;
@@ -69,29 +69,29 @@ function SignUp(props) {
                     text-decoration: underline;
                 }
             `}</style>
-        </head>
-        <body>
-            <div className="signup-container">
-                <div className="signup-card">
-                    <h1>Sign up for the GOAT</h1>
-                    <form className="signup-form" action="/users/signup" method="POST">
-                        <input type="text" name="name" placeholder="Enter your name" required />
-                        <input type="email" name="email" placeholder="Enter your email" required />
-                        <input type="password" name="password" placeholder="Enter your password" required />
-                        <select name="role" required>
-                            <option value="">Select a role</option>
-                            <option value="Admin">Admin</option>
-                            <option value="Staff">Staff</option>
-                            {/* <option value="Customer">Customer</option> */}
-                        </select>
-                        <input type="submit" value="Sign Up" />
-                    </form>
-                    <div className="signup-links">
-                        <a href="/users/signin">Already have an account? Sign In</a>
+            </head>
+            <body>
+                <div className="signup-container">
+                    <div className="signup-card">
+                        <h1>Sign up for the GOAT</h1>
+                        <form className="signup-form" action="/users/signup" method="POST">
+                            <input type="text" name="name" placeholder="Enter your name" required />
+                            <input type="email" name="email" placeholder="Enter your email" required />
+                            <input type="password" name="password" placeholder="Enter your password" required />
+                            <select name="role" required>
+                                <option value="">Select a role</option>
+                                <option value="Admin">Admin</option>
+                                <option value="Staff">Staff</option>
+                                {/* <option value="Customer">Customer</option> */}
+                            </select>
+                            <input type="submit" value="Sign Up" />
+                        </form>
+                        <div className="signup-links">
+                            <a href="/users/signin">Already have an account? Sign In</a>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </body>
+            </body>
         </html>
     );
 }
