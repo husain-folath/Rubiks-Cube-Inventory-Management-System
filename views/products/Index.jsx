@@ -7,19 +7,24 @@ function index (props)
     const token=props.token
     return(
         <Layout token={token}>
-            <h1>Avialable Products:</h1>
-            <a href={`/products/new?token=${token}`}>Add a new product</a> <br />
+            <a href={`/products/new?token=${token}`} id="productAddBtnLink"> <button id="productAddBtn">+</button></a> <br />
+            <h1 id="productsTitle">Products</h1>
             <div className="productsContainer">
                 {
                     products.map(product=>{
                         return(
-                            <div class="product">
-                                <img src={product.image} alt={product.description} />
-                                name: <a href={`/products/${product._id}?token=${token}`}>{product.name} </a><br/>
-                                description: {product.description}<br/>
-                                price: {product.price}<br/>
-                                stock: {product.stock}<br/>
-                            </div>
+                            <a href={`/products/${product._id}?token=${token}`} class="productLink">
+                                <div class="product">
+                                    <img src={product.image} alt={product.description} />
+                                    
+                                        <h4 class="productName">{product.name}</h4>
+                                        <span class="description"><strong> Description:</strong> {product.description}</span><br/>
+                                        <span class="price"><strong>Price:</strong> ${product.price}</span><br/>
+                                        <span class="stock"><strong>Stock:</strong> {product.stock}</span><br/>
+                                        <span class="productSupplier"><strong>Supplier:</strong> {product.supplier.name}</span>
+                                    
+                                </div>
+                            </a>
                         )
                     })
                 }

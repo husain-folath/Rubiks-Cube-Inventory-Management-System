@@ -7,7 +7,7 @@ const dataController={}
 dataController.index= async (req,res,next)=>
 {
     try {
-        res.locals.data.products= await Product.find({})
+        res.locals.data.products= await Product.find({}).populate("supplier")
         next()
     } catch (error) {
         res.status(400).send({message:error.message})
