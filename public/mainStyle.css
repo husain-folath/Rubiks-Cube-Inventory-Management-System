@@ -156,7 +156,7 @@ nav>a:hover {
     display: flex;
 }
 
-/* New */
+/* New and Edit*/
 #productContainerNew {
     display: flex;
     flex-direction: column;
@@ -183,10 +183,12 @@ nav>a:hover {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    font-size: larger;
 }
 #productFormContainerNew> form>div>div>input,#productFormContainerNew> form>div>div>select {
     background-color: rgb(138, 4, 233);
     color: aliceblue;
+    font-size: large;
 }
 #productFormContainerNew> form>div>div>input::placeholder
 {
@@ -238,4 +240,5 @@ nav>a:hover {
     background-color: rgb(138, 4, 233);
     color: aliceblue;
     border: solid 2px rgb(57, 1, 98) ;
+    font-size: large;
 }
