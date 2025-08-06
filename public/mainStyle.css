@@ -242,3 +242,508 @@ nav>a:hover {
     border: solid 2px rgb(57, 1, 98) ;
     font-size: large;
 }
+/* ---------------- Orders ---------------- */
+
+/* Index */
+#ordersContainerIndex {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 20px;
+}
+
+#ordersTitleIndex {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.orderAddLinkIndex {
+    background-color: indigo;
+    color: aliceblue;
+    padding: 10px 20px;
+    border: 2px solid rgb(57, 1, 98);
+    border-radius: 10%;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.orderAddLinkIndex:hover {
+    filter: brightness(85%);
+    cursor: pointer;
+}
+
+.ordersListIndex {
+    list-style: none;
+    padding: 0;
+    margin-top: 20px;
+}
+
+.orderItemIndex {
+    margin: 10px 0;
+}
+
+.orderLinkIndex {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+}
+
+.orderLinkIndex:hover {
+    color: indigo;
+}
+
+/* Show */
+#orderContainerShow {
+    display: flex;
+    flex-direction: column;
+    margin: 20px;
+    padding: 20px;
+    border: 2px solid rgb(57, 1, 98);
+    border-radius: 10%;
+    background-color: aliceblue;
+}
+
+#orderTitleShow {
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+#orderDetailsShow {
+    font-size: large;
+    margin-bottom: 20px;
+}
+
+#orderItemsListShow {
+    list-style: none;
+    padding: 0;
+    margin-top: 10px;
+}
+
+.orderProductLinkShow {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+}
+
+.orderProductLinkShow:hover {
+    color: indigo;
+}
+
+#orderAddItemFormShow {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.orderBtnAddItemShow,
+.orderBtnDeleteShow,
+.orderEditBtnShow {
+    margin: 10px 0;
+    background-color: indigo;
+    color: aliceblue;
+    padding: 10px 15px;
+    border: 2px solid rgb(57, 1, 98);
+    border-radius: 15%;
+    font-size: medium;
+    font-weight: bold;
+}
+
+.orderBtnAddItemShow:hover,
+.orderBtnDeleteShow:hover,
+.orderEditBtnShow:hover {
+    filter: brightness(85%);
+    cursor: pointer;
+}
+
+#orderBtnsBarShow {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+
+.orderReturnLinkShow {
+    text-decoration: none;
+    font-weight: bold;
+    color: indigo;
+}
+
+/* New */
+#orderContainerNew {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#orderTitleNew {
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+#orderFormNew {
+    height: 350px;
+    min-width: 400px;
+    width: 60vw;
+    border: 2px solid rgb(57, 1, 98);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    border-radius: 10%;
+    font-size: larger;
+    background-color: indigo;
+    color: aliceblue;
+    padding: 20px;
+}
+
+#orderFormNew select,
+#orderFormNew input[type="number"] {
+    background-color: rgb(138, 4, 233);
+    color: aliceblue;
+    font-size: medium;
+    padding: 5px;
+    border: 1px solid rgb(57, 1, 98);
+    border-radius: 5px;
+}
+
+#orderFormNew input[type="number"]::placeholder {
+    color: aliceblue;
+}
+
+.orderBtnAddNew {
+    background-color: rgb(138, 4, 233);
+    color: aliceblue;
+    padding: 10px 15px;
+    border: solid 2px rgb(57, 1, 98);
+    border-radius: 15%;
+    font-size: medium;
+    font-weight: bold;
+}
+
+.orderBtnAddNew:hover {
+    filter: brightness(85%);
+    cursor: pointer;
+}
+
+.orderReturnLinkNew {
+    margin-top: 20px;
+    color: indigo;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Edit */
+#orderContainerEdit {
+    display: flex;
+    flex-direction: column;
+    margin: 20px;
+    padding: 20px;
+    border: 2px solid rgb(57, 1, 98);
+    border-radius: 10%;
+    background-color: aliceblue;
+}
+
+#orderTitleEdit {
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.orderUserEdit {
+    font-size: large;
+    margin-bottom: 15px;
+}
+
+#orderFormEdit,
+#orderAddFormEdit,
+#orderDeleteFormEdit {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.orderItemEdit {
+    margin: 10px 0;
+}
+
+.orderProductLinkEdit {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+}
+
+.orderProductLinkEdit:hover {
+    color: indigo;
+}
+
+.orderBtnEdit,
+.orderBtnDeleteEdit {
+    background-color: indigo;
+    color: aliceblue;
+    padding: 10px 15px;
+    border: 2px solid rgb(57, 1, 98);
+    border-radius: 15%;
+    font-size: medium;
+    font-weight: bold;
+}
+
+.orderBtnEdit:hover,
+.orderBtnDeleteEdit:hover {
+    filter: brightness(85%);
+    cursor: pointer;
+}
+
+.orderReturnLinkEdit {
+    margin-top: 20px;
+    color: indigo;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* ---------------- Suppliers ---------------- */
+
+/* Index */
+#suppliersContainerIndex {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 20px;
+}
+
+#suppliersTitleIndex {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.supplierAddLinkIndex {
+    background-color: indigo;
+    color: aliceblue;
+    padding: 10px 20px;
+    border: 2px solid rgb(57, 1, 98);
+    border-radius: 10%;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.supplierAddLinkIndex:hover {
+    filter: brightness(85%);
+    cursor: pointer;
+}
+
+.suppliersListIndex {
+    list-style: none;
+    padding: 0;
+    margin-top: 20px;
+}
+
+.supplierItemIndex {
+    margin: 10px 0;
+}
+
+.supplierLinkIndex {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+}
+
+.supplierLinkIndex:hover {
+    color: indigo;
+}
+
+/* Show */
+#supplierContainerShow {
+    display: flex;
+    flex-direction: column;
+    margin: 20px;
+    padding: 20px;
+    border: 2px solid rgb(57, 1, 98);
+    border-radius: 10%;
+    background-color: aliceblue;
+}
+
+#supplierTitleShow {
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+#supplierDetailsShow {
+    font-size: large;
+    margin-bottom: 20px;
+}
+
+#supplierProductsListShow {
+    list-style: none;
+    padding: 0;
+    margin-top: 10px;
+}
+
+.supplierProductLinkShow {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+}
+
+.supplierProductLinkShow:hover {
+    color: indigo;
+}
+
+#supplierDeleteFormShow {
+    margin-top: 20px;
+}
+
+.supplierBtnDeleteShow,
+.supplierEditBtnShow {
+    margin: 10px 0;
+    background-color: indigo;
+    color: aliceblue;
+    padding: 10px 15px;
+    border: 2px solid rgb(57, 1, 98);
+    border-radius: 15%;
+    font-size: medium;
+    font-weight: bold;
+}
+
+.supplierBtnDeleteShow:hover,
+.supplierEditBtnShow:hover {
+    filter: brightness(85%);
+    cursor: pointer;
+}
+
+#supplierBtnsBarShow {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+
+.supplierReturnLinkShow {
+    text-decoration: none;
+    font-weight: bold;
+    color: indigo;
+}
+
+/* New */
+#supplierContainerNew {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#supplierTitleNew {
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+#supplierFormNew {
+    height: 350px;
+    min-width: 400px;
+    width: 60vw;
+    border: 2px solid rgb(57, 1, 98);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    border-radius: 10%;
+    font-size: larger;
+    background-color: indigo;
+    color: aliceblue;
+    padding: 20px;
+}
+
+#supplierFormNew input[type="text"],
+#supplierFormNew input[type="tel"],
+#supplierFormNew input[type="email"] {
+    background-color: rgb(138, 4, 233);
+    color: aliceblue;
+    font-size: medium;
+    padding: 5px;
+    border: 1px solid rgb(57, 1, 98);
+    border-radius: 5px;
+    width: 80%;
+}
+
+#supplierFormNew input::placeholder {
+    color: aliceblue;
+}
+
+.supplierBtnAddNew {
+    background-color: rgb(138, 4, 233);
+    color: aliceblue;
+    padding: 10px 15px;
+    border: solid 2px rgb(57, 1, 98);
+    border-radius: 15%;
+    font-size: medium;
+    font-weight: bold;
+}
+
+.supplierBtnAddNew:hover {
+    filter: brightness(85%);
+    cursor: pointer;
+}
+
+.supplierReturnLinkNew {
+    margin-top: 20px;
+    color: indigo;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Edit */
+#supplierContainerEdit {
+    display: flex;
+    flex-direction: column;
+    margin: 20px;
+    padding: 20px;
+    border: 2px solid rgb(57, 1, 98);
+    border-radius: 10%;
+    background-color: aliceblue;
+}
+
+#supplierTitleEdit {
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+#supplierFormEdit {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    font-size: larger;
+}
+
+#supplierFormEdit input[type="text"],
+#supplierFormEdit input[type="tel"],
+#supplierFormEdit input[type="email"] {
+    background-color: rgb(138, 4, 233);
+    color: aliceblue;
+    font-size: medium;
+    padding: 5px;
+    border: 1px solid rgb(57, 1, 98);
+    border-radius: 5px;
+    width: 80%;
+}
+
+.supplierBtnEdit {
+    background-color: indigo;
+    color: aliceblue;
+    padding: 10px 15px;
+    border: 2px solid rgb(57, 1, 98);
+    border-radius: 15%;
+    font-size: medium;
+    font-weight: bold;
+}
+
+.supplierBtnEdit:hover {
+    filter: brightness(85%);
+    cursor: pointer;
+}
+
+.supplierReturnLinkEdit {
+    margin-top: 20px;
+    color: indigo;
+    text-decoration: none;
+    font-weight: bold;
+}

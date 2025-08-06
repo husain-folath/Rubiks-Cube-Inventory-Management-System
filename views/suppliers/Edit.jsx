@@ -1,23 +1,33 @@
-const React=require("react")
-const Layout=require("../layouts/Layout")
+const React = require("react");
+const Layout = require("../layouts/Layout");
 
-function Edit(props)
-{
-    const token= props.token
-    const {_id,name,contact,email}=props.supplier
+function Edit(props) {
+    const token = props.token;
+    const { _id, name, contact, email } = props.supplier;
 
-    return(
+    return (
         <Layout token={token}>
-            <h1>Edit supplier</h1>
-            <form action={`/suppliers/${_id}?_method=PUT&token=${token}`} method="post">
-            supplier name: <input type="text" name="name" defaultValue={name}/> <br />
-            supplier Number: <input type="tel" name="contact" defaultValue={contact}/><br />
-            supplier email: <input type="email" name="email" defaultValue={email}/><br />
-            <input type="submit" value="Change supplier" />
-            </form>
-            <a href={`/suppliers/${_id}?token=${token}`}>Go back</a>
+            <div id="supplierContainerEdit">
+                <h1 id="supplierTitleEdit">Edit Supplier</h1>
+                <form id="supplierFormEdit" action={`/suppliers/${_id}?_method=PUT&token=${token}`} method="post">
+                    <label>
+                        Supplier Name:
+                        <input type="text" name="name" defaultValue={name} />
+                    </label>
+                    <label>
+                        Supplier Number:
+                        <input type="tel" name="contact" defaultValue={contact} />
+                    </label>
+                    <label>
+                        Supplier Email:
+                        <input type="email" name="email" defaultValue={email} />
+                    </label>
+                    <input className="supplierBtnEdit" type="submit" value="Change Supplier" />
+                </form>
+                <a className="supplierReturnLinkEdit" href={`/suppliers/${_id}?token=${token}`}>Go Back</a>
+            </div>
         </Layout>
-    )
+    );
 }
 
-module.exports=Edit
+module.exports = Edit;

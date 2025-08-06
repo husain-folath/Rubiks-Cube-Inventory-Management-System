@@ -1,21 +1,32 @@
-const React=require("react")
-const Layout=require("../layouts/Layout")
+const React = require("react");
+const Layout = require("../layouts/Layout");
 
-function NewView(props)
-{
-    const token= props.token
-    return(
+function NewView(props) {
+    const token = props.token;
+
+    return (
         <Layout token={token}>
-            <h1>Add new supplier</h1>
-            <form action={`/suppliers?token=${token}`} method="post">
-            supplier name: <input type="text" name="name" placeholder="Enter name here"/> <br />
-            supplier Number: <input type="tel" name="contact" placeholder="Enter phone number here"/><br />
-            supplier email: <input type="email" name="email" placeholder="Enter name here"/><br />
-            <input type="submit" value="Add supplier" />
-            </form>
-            <a href={`/suppliers?token=${token}`}>Go back</a>
+            <div id="supplierContainerNew">
+                <h1 id="supplierTitleNew">Add New Supplier</h1>
+                <form id="supplierFormNew" action={`/suppliers?token=${token}`} method="post">
+                    <label>
+                        Supplier Name:
+                        <input type="text" name="name" placeholder="Enter name here" />
+                    </label>
+                    <label>
+                        Supplier Number:
+                        <input type="tel" name="contact" placeholder="Enter phone number here" />
+                    </label>
+                    <label>
+                        Supplier Email:
+                        <input type="email" name="email" placeholder="Enter email here" />
+                    </label>
+                    <input className="supplierBtnAddNew" type="submit" value="Add Supplier" />
+                </form>
+                <a className="supplierReturnLinkNew" href={`/suppliers?token=${token}`}>Go Back</a>
+            </div>
         </Layout>
-    )
+    );
 }
 
-module.exports=NewView
+module.exports = NewView;
