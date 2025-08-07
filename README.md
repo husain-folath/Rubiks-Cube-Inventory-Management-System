@@ -94,6 +94,11 @@ rubiks-inventory/
 │        └── Layout.jsx 
 └── public/                       # Static files (images, CSS, etc.)
     ├── mainStyle.css 
+    ├── orders-index.png 
+    ├── products-index.png
+    ├── signin-page.png
+    ├── signup-page.png
+    ├── suppliers-index.png
     └── background-image.png
 ```
 
