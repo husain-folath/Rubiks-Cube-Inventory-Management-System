@@ -7,10 +7,9 @@ An inventory management web application for tracking Rubik's Cube products, stoc
 ## 🚀 Features
 
 - 🛍️ Product catalog with images and details
-- 📦 Stock level tracking with low-stock alerts
 - 📑 Order creation and management
 - 🧾 Supplier management and product assignment
-- 🔒 User authentication (optional)
+- 🔒 User authentication 
 
 ---
 
@@ -23,7 +22,6 @@ An inventory management web application for tracking Rubik's Cube products, stoc
 - `stock` (Number) — Units in inventory
 - `imageUrl` (String) — Image path or URL
 - `supplier` (ObjectId) — Linked Supplier
-- `orders` (Array of ObjectId) — Orders containing this product
 
 ### 🚚 Supplier
 - `name` (String) — Supplier name
@@ -74,12 +72,29 @@ rubiks-inventory/
 │       ├── viewController.js     # Login/register forms and user pages
 │       └── routeController.js    # User web and API routing
 ├── views/
-│   └── products/                 # Product listing & detail pages
-│   └── orders/                   # Orders dashboard
-│   └── suppliers/                # Supplier details
-│   └── users/                    # Register, login, profile pages
+│   ├─── products/                 # Product listing & detail pages
+│   │    ├── Index.jsx 
+│   │    ├── New.jsx 
+│   │    ├── Edit.jsx
+│   │    └── Show.jsx
+│   ├── orders/                   # Orders dashboard
+│   │    ├── Index.jsx 
+│   │    ├── New.jsx 
+│   │    ├── Edit.jsx
+│   │    └── Show.jsx
+│   ├── suppliers/                # Supplier details
+│   │    ├── Index.jsx 
+│   │    ├── New.jsx 
+│   │    ├── Edit.jsx
+│   │    └── Show.jsx
+│   ├── users/                    # Register, login, profile pages
+│   │    ├── SignIn.jsx 
+│   │    └── SignUp.jsx 
 │   └── layouts/                  # Shared UI layouts
+│        └── Layout.jsx 
 └── public/                       # Static files (images, CSS, etc.)
+    ├── mainStyle.css 
+    └── background-image.png
 ```
 
 ---
@@ -96,8 +111,8 @@ rubiks-inventory/
 
 ## 🌐 Web Routes
 
-| Method | Endpoint                  | Description               | Auth Required |
-|--------|---------------------------|---------------------------|----------------|
+| Method | Endpoint                  | Description               | Auth Required   |
+|--------|---------------------------|---------------------------|-----------------|
 | GET    | `/products`               | Show all cube products    | ✅ Yes          |
 | GET    | `/products/new`           | New cube form             | ✅ Yes          |
 | POST   | `/products`               | Create new cube product   | ✅ Yes          |
@@ -119,3 +134,40 @@ rubiks-inventory/
 | GET    | `/users/signup`           | Registration form         | ❌ No           |
 | POST   | `/users/signup`           | Create new user           | ❌ No           |
 
+---
+
+## 📦 Deployment & Usage
+
+1. Clone the repo  
+2. Run `npm install`  
+3. Create a `.env` with your DB and secret key  
+4. Run `npm start` to begin local dev  
+5. Seed database (optional script)  
+6. Navigate to `localhost:PORT` to begin
+
+---
+
+## 🔐 Optional Enhancements
+
+- Role-based admin panel  
+- REST API endpoint support  
+- Responsive UI with React  
+- Product filtering, sorting & search  
+- Cart/checkout integration
+
+---
+## 📸 Screenshots
+
+
+### 🧊 Product Index
+![Product Catalog](/public/products-index.png)
+
+### 🚚 Supplier Index
+![Supplier View](/public/suppliers-index.png)
+
+### 🛒 Order Index
+![Order Dashboard](/public/orders-index.png)
+
+### 👤 User 
+![Login](/public/signin-page.png)
+![signup](/public/signup-page.png)

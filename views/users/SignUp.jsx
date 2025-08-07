@@ -73,7 +73,7 @@ function SignUp(props) {
             <body>
                 <div className="signup-container">
                     <div className="signup-card">
-                        <h1>Sign up for the GOAT</h1>
+                        <h1>Sign up</h1>
                         <form className="signup-form" action="/users/signup" method="POST">
                             <input type="text" name="name" placeholder="Enter your name" required />
                             <input type="email" name="email" placeholder="Enter your email" required />

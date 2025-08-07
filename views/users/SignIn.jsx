@@ -71,7 +71,7 @@ function SignIn(props) {
             <body>
                 <div className="signin-container">
                     <div className="signin-card">
-                        <h1>Sign in for the GOAT</h1>
+                        <h1>Sign in</h1>
                         <form className="signin-form" action="/users/signin" method="POST">
                             <input type="email" name="email" placeholder="Enter your email" required />
                             <input type="password" name="password" placeholder="Enter your password" required />
